@@ -9,7 +9,7 @@ import {
 
 import OrdersProducts from '@modules/orders/infra/typeorm/entities/OrdersProducts';
 
-@Entity('customers')
+@Entity('products')
 class Product {
   @PrimaryGeneratedColumn('uuid')
   id: string;
