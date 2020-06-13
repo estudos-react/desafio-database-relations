@@ -6,11 +6,16 @@ import cors from 'cors';
 
 import AppError from '@shared/errors/AppError';
 import createConnection from '@shared/infra/typeorm';
+import { types } from 'pg';
 import routes from './routes';
 
 import '@shared/container';
 
 createConnection();
+
+types.setTypeParser(20, val => {
+  return parseInt(val);
+});
 
 const app = express();
 
